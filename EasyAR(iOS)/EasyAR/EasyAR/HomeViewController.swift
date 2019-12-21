@@ -14,8 +14,5 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func testFunc() {
-        
-    }
 }
 
