@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		219BB76C23914CDC005D1B63 /* DetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219BB76B23914CDC005D1B63 /* DetectViewController.swift */; };
 		21E4072C235B706400F07617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4072B235B706400F07617 /* AppDelegate.swift */; };
 		21E4072E235B706400F07617 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4072D235B706400F07617 /* SceneDelegate.swift */; };
-		21E40730235B706400F07617 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4072F235B706400F07617 /* ViewController.swift */; };
+		21E40730235B706400F07617 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4072F235B706400F07617 /* HomeViewController.swift */; };
 		21E40733235B706400F07617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E40731235B706400F07617 /* Main.storyboard */; };
 		21E40735235B706600F07617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21E40734235B706600F07617 /* Assets.xcassets */; };
 		21E40738235B706600F07617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E40736235B706600F07617 /* LaunchScreen.storyboard */; };
@@ -35,10 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		219BB76B23914CDC005D1B63 /* DetectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectViewController.swift; sourceTree = "<group>"; };
 		21E40728235B706400F07617 /* EasyAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E4072B235B706400F07617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E4072D235B706400F07617 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		21E4072F235B706400F07617 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21E4072F235B706400F07617 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		21E40732235B706400F07617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21E40734235B706600F07617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21E40737235B706600F07617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,8 +103,9 @@
 			children = (
 				21E4072B235B706400F07617 /* AppDelegate.swift */,
 				21E4072D235B706400F07617 /* SceneDelegate.swift */,
-				21E4072F235B706400F07617 /* ViewController.swift */,
+				21E4072F235B706400F07617 /* HomeViewController.swift */,
 				21E40731235B706400F07617 /* Main.storyboard */,
+				219BB76B23914CDC005D1B63 /* DetectViewController.swift */,
 				21E40734235B706600F07617 /* Assets.xcassets */,
 				21E40736235B706600F07617 /* LaunchScreen.storyboard */,
 				21E40739235B706600F07617 /* Info.plist */,
@@ -259,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E40730235B706400F07617 /* ViewController.swift in Sources */,
+				21E40730235B706400F07617 /* HomeViewController.swift in Sources */,
+				219BB76C23914CDC005D1B63 /* DetectViewController.swift in Sources */,
 				21E4072C235B706400F07617 /* AppDelegate.swift in Sources */,
 				21E4072E235B706400F07617 /* SceneDelegate.swift in Sources */,
 			);
@@ -437,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67PLHAGWF8;
 				INFOPLIST_FILE = EasyAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67PLHAGWF8;
 				INFOPLIST_FILE = EasyAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
