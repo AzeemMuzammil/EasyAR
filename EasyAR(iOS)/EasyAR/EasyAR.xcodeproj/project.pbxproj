@@ -17,6 +17,7 @@
 		21E40743235B706600F07617 /* EasyARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E40742235B706600F07617 /* EasyARTests.swift */; };
 		21E4074E235B706600F07617 /* EasyARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4074D235B706600F07617 /* EasyARUITests.swift */; };
 		21F0AA4723AFBBF1003AB889 /* ProductInfo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 21F0AA4623AFBBF1003AB889 /* ProductInfo.sks */; };
+		21F0AA4923AFEE85003AB889 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F0AA4823AFEE85003AB889 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		21E4074D235B706600F07617 /* EasyARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyARUITests.swift; sourceTree = "<group>"; };
 		21E4074F235B706600F07617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21F0AA4623AFBBF1003AB889 /* ProductInfo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProductInfo.sks; sourceTree = "<group>"; };
+		21F0AA4823AFEE85003AB889 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +105,12 @@
 		21E4072A235B706400F07617 /* EasyAR */ = {
 			isa = PBXGroup;
 			children = (
+				21F0AA4B23AFEE9F003AB889 /* Controller */,
+				21F0AA4A23AFEE90003AB889 /* View */,
 				21E4072B235B706400F07617 /* AppDelegate.swift */,
 				21E4072D235B706400F07617 /* SceneDelegate.swift */,
 				21F0AA4623AFBBF1003AB889 /* ProductInfo.sks */,
-				21E4072F235B706400F07617 /* HomeViewController.swift */,
 				21E40731235B706400F07617 /* Main.storyboard */,
-				219BB76B23914CDC005D1B63 /* DetectViewController.swift */,
 				21E40734235B706600F07617 /* Assets.xcassets */,
 				21E40736235B706600F07617 /* LaunchScreen.storyboard */,
 				21E40739235B706600F07617 /* Info.plist */,
@@ -132,6 +134,23 @@
 				21E4074F235B706600F07617 /* Info.plist */,
 			);
 			path = EasyARUITests;
+			sourceTree = "<group>";
+		};
+		21F0AA4A23AFEE90003AB889 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21F0AA4823AFEE85003AB889 /* CustomButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21F0AA4B23AFEE9F003AB889 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				219BB76B23914CDC005D1B63 /* DetectViewController.swift */,
+				21E4072F235B706400F07617 /* HomeViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +289,7 @@
 				219BB76C23914CDC005D1B63 /* DetectViewController.swift in Sources */,
 				21E4072C235B706400F07617 /* AppDelegate.swift in Sources */,
 				21E4072E235B706400F07617 /* SceneDelegate.swift in Sources */,
+				21F0AA4923AFEE85003AB889 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

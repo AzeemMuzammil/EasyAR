@@ -23,7 +23,6 @@ class DetectViewController: UIViewController, ARSCNViewDelegate,ARSessionDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sceneView.session.run(configuration)
         
         sceneView.delegate = self
         sceneView.session.delegate=self
@@ -84,6 +83,10 @@ class DetectViewController: UIViewController, ARSCNViewDelegate,ARSessionDelegat
         sceneView.session.pause()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.sceneView.session.run(configuration)
+    }
+    
     public func session(_ session: ARSession, didUpdate frame: ARFrame) {
         DispatchQueue.global(qos: .userInitiated).async {
             do {
@@ -106,46 +109,26 @@ class DetectViewController: UIViewController, ARSCNViewDelegate,ARSessionDelegat
 
     // Override to create and configure nodes for anchors added to the view's session.
 
-    
-//    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-//
-//        // If this is our anchor, create a node
-//        if self.detectedDataAnchor?.identifier == anchor.identifier {
-//            let sphere = SCNSphere(radius: 0.2)
-//            sphere.firstMaterial?.diffuse.contents = UIColor.red
-//            let sphereNode = SCNNode(geometry: sphere)
-//            sphereNode.transform = SCNMatrix4(anchor.transform)
-//            return sphereNode
-//        }
-//        return nil
-//    }
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
         let node = SCNNode()
         
         if self.detectedDataAnchor?.identifier == anchor.identifier{
-            let sphere = SCNSphere(radius: 0.2)
+            
+            let plane = SCNPlane(width: 0.4, height: 0.25)
+
+            plane.cornerRadius = plane.width / 8
+
             let spriteKitScene = SKScene(fileNamed: "ProductInfo")
-            sphere.firstMaterial?.diffuse.contents = spriteKitScene
-            let sphereNode = SCNNode(geometry: sphere)
-            sphereNode.transform = SCNMatrix4(anchor.transform)
-            let objectAnchor = anchor as? ARObjectAnchor
-            print(objectAnchor)
+
+            plane.firstMaterial?.diffuse.contents = spriteKitScene
+            plane.firstMaterial?.isDoubleSided = true
+            plane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
+
+            let planeNode = SCNNode(geometry: plane)
+            //planeNode.position = SCNVector3Make(objectAnchor.referenceObject.center.x, objectAnchor.referenceObject.center.y + 0.35, objectAnchor.referenceObject.center.z)
             
-//            let plane = SCNPlane(width: CGFloat(objectAnchor.referenceObject.extent.x * 0.8), height: CGFloat(objectAnchor.referenceObject.extent.y * 0.5))
-//
-//            plane.cornerRadius = plane.width / 8
-//
-//            let spriteKitScene = SKScene(fileNamed: "ProductInfo")
-//
-//            plane.firstMaterial?.diffuse.contents = spriteKitScene
-//            plane.firstMaterial?.isDoubleSided = true
-//            plane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
-//
-//            let planeNode = SCNNode(geometry: plane)
-//            planeNode.position = SCNVector3Make(objectAnchor.referenceObject.center.x, objectAnchor.referenceObject.center.y + 0.35, objectAnchor.referenceObject.center.z)
-            
-            node.addChildNode(sphereNode)
+            node.addChildNode(planeNode)
             return node
             
         }
