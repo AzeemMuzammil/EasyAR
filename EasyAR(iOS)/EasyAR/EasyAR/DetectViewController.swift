@@ -42,7 +42,7 @@ class DetectViewController: UIViewController, ARSCNViewDelegate,ARSessionDelegat
     func requestHandler(request: VNRequest, error: Error?) {
         // Get the first result out of the results, if there are any
         if let results = request.results, let result = results.first as? VNBarcodeObservation {
-            print(result.payloadStringValue ?? "No String")
+            //print(result.payloadStringValue ?? "No String")
             guard result.payloadStringValue != nil else {return}
             // Get the bounding box for the bar code and find the center
             var rect = result.boundingBox
@@ -107,47 +107,80 @@ class DetectViewController: UIViewController, ARSCNViewDelegate,ARSessionDelegat
     // Override to create and configure nodes for anchors added to the view's session.
 
     
+//    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+//
+//        // If this is our anchor, create a node
+//        if self.detectedDataAnchor?.identifier == anchor.identifier {
+//            let sphere = SCNSphere(radius: 0.2)
+//            sphere.firstMaterial?.diffuse.contents = UIColor.red
+//            let sphereNode = SCNNode(geometry: sphere)
+//            sphereNode.transform = SCNMatrix4(anchor.transform)
+//            return sphereNode
+//        }
+//        return nil
+//    }
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-
-        // If this is our anchor, create a node
-        if self.detectedDataAnchor?.identifier == anchor.identifier {
+        
+        let node = SCNNode()
+        
+        if self.detectedDataAnchor?.identifier == anchor.identifier{
             let sphere = SCNSphere(radius: 0.2)
-            sphere.firstMaterial?.diffuse.contents = UIColor.red
+            let spriteKitScene = SKScene(fileNamed: "ProductInfo")
+            sphere.firstMaterial?.diffuse.contents = spriteKitScene
             let sphereNode = SCNNode(geometry: sphere)
             sphereNode.transform = SCNMatrix4(anchor.transform)
-            return sphereNode
+            let objectAnchor = anchor as? ARObjectAnchor
+            print(objectAnchor)
+            
+//            let plane = SCNPlane(width: CGFloat(objectAnchor.referenceObject.extent.x * 0.8), height: CGFloat(objectAnchor.referenceObject.extent.y * 0.5))
+//
+//            plane.cornerRadius = plane.width / 8
+//
+//            let spriteKitScene = SKScene(fileNamed: "ProductInfo")
+//
+//            plane.firstMaterial?.diffuse.contents = spriteKitScene
+//            plane.firstMaterial?.isDoubleSided = true
+//            plane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
+//
+//            let planeNode = SCNNode(geometry: plane)
+//            planeNode.position = SCNVector3Make(objectAnchor.referenceObject.center.x, objectAnchor.referenceObject.center.y + 0.35, objectAnchor.referenceObject.center.z)
+            
+            node.addChildNode(sphereNode)
+            return node
+            
         }
+        
         return nil
     }
     
-    func addView() ->SCNNode{
-
-        
-        
-        let skScene = SKScene(size: CGSize(width: 200, height: 200))
-        skScene.backgroundColor = UIColor.clear
-        
-        let rectangle = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 200, height: 200), cornerRadius: 10)
-        rectangle.fillColor = #colorLiteral(red: 0.807843148708344, green: 0.0274509806185961, blue: 0.333333343267441, alpha: 1.0)
-        rectangle.strokeColor = #colorLiteral(red: 0.439215689897537, green: 0.0117647061124444, blue: 0.192156866192818, alpha: 1.0)
-        rectangle.lineWidth = 5
-        rectangle.alpha = 0.4
-        let labelNode = SKLabelNode(text: "Hello World")
-        labelNode.fontSize = 20
-        labelNode.fontName = "Arial"
-        labelNode.position = CGPoint(x:0,y:0)
-        skScene.addChild(rectangle)
-        skScene.addChild(labelNode)
-        
-        
-        let plane = SCNPlane(width: 0.20, height: 0.20)
-        let material = SCNMaterial()
-        material.isDoubleSided = true
-        material.diffuse.contents = skScene
-        plane.materials = [material]
-        let planeNode = SCNNode(geometry: plane)
-
-        return planeNode
-    }
+//    func addView() ->SCNNode{
+//
+//
+//
+//        let skScene = SKScene(size: CGSize(width: 200, height: 200))
+//        skScene.backgroundColor = UIColor.clear
+//
+//        let rectangle = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 200, height: 200), cornerRadius: 10)
+//        rectangle.fillColor = #colorLiteral(red: 0.807843148708344, green: 0.0274509806185961, blue: 0.333333343267441, alpha: 1.0)
+//        rectangle.strokeColor = #colorLiteral(red: 0.439215689897537, green: 0.0117647061124444, blue: 0.192156866192818, alpha: 1.0)
+//        rectangle.lineWidth = 5
+//        rectangle.alpha = 0.4
+//        let labelNode = SKLabelNode(text: "Hello World")
+//        labelNode.fontSize = 20
+//        labelNode.fontName = "Arial"
+//        labelNode.position = CGPoint(x:0,y:0)
+//        skScene.addChild(rectangle)
+//        skScene.addChild(labelNode)
+//
+//
+//        let plane = SCNPlane(width: 0.20, height: 0.20)
+//        let material = SCNMaterial()
+//        material.isDoubleSided = true
+//        material.diffuse.contents = skScene
+//        plane.materials = [material]
+//        let planeNode = SCNNode(geometry: plane)
+//
+//        return planeNode
+//    }
 
 }
