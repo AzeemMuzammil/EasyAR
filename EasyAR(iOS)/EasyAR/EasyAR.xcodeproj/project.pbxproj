@@ -18,6 +18,7 @@
 		21E4074E235B706600F07617 /* EasyARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4074D235B706600F07617 /* EasyARUITests.swift */; };
 		21F0AA4723AFBBF1003AB889 /* ProductInfo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 21F0AA4623AFBBF1003AB889 /* ProductInfo.sks */; };
 		21F0AA4923AFEE85003AB889 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F0AA4823AFEE85003AB889 /* CustomButton.swift */; };
+		21F0AA4D23B0EAFD003AB889 /* NoIssues.sks in Resources */ = {isa = PBXBuildFile; fileRef = 21F0AA4C23B0EAFD003AB889 /* NoIssues.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		21E4074F235B706600F07617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21F0AA4623AFBBF1003AB889 /* ProductInfo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProductInfo.sks; sourceTree = "<group>"; };
 		21F0AA4823AFEE85003AB889 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		21F0AA4C23B0EAFD003AB889 /* NoIssues.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NoIssues.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				21E4072B235B706400F07617 /* AppDelegate.swift */,
 				21E4072D235B706400F07617 /* SceneDelegate.swift */,
 				21F0AA4623AFBBF1003AB889 /* ProductInfo.sks */,
+				21F0AA4C23B0EAFD003AB889 /* NoIssues.sks */,
 				21E40731235B706400F07617 /* Main.storyboard */,
 				21E40734235B706600F07617 /* Assets.xcassets */,
 				21E40736235B706600F07617 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				21E40735235B706600F07617 /* Assets.xcassets in Resources */,
 				21E40733235B706400F07617 /* Main.storyboard in Resources */,
 				21F0AA4723AFBBF1003AB889 /* ProductInfo.sks in Resources */,
+				21F0AA4D23B0EAFD003AB889 /* NoIssues.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
